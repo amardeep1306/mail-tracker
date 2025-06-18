@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mail Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 10px;
+            width: 500px;
+        }
+        #trackingToggle {
+            margin-top: 10px;
+        }
+        #statusText {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        #statusBtn, #saveBtn {
+            margin-top: 15px;
+            padding: 6px 12px;
+            width: 100%;
+        }
+        #recipientEmail {
+            width: 100%;
+            padding: 5px;
+            margin-top: 10px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <h3>📬 Mail Tracker</h3>
+    
+    <label>
+        <input type="checkbox" id="trackingToggle">
+        Enable Tracking
+    </label>
+    
+    <div id="statusText">Tracking is OFF</div>
+
+    <label for="recipientEmail">Recipient Email:</label>
+    <input type="email" id="recipientEmail" placeholder="e.g. amit@gmail.com" required />
+    <button id="saveBtn">Save Recipient</button>
+
+    <button id="statusBtn">Open Dashboard</button>
+
+    <script src="popup.js"></script>
+</body>
+</html>
