@@ -25,6 +25,27 @@ def track():
         db.session.commit()
     return '', 204
 
+@app.route('/store', methods=['POST'])
+def store_email():
+    data = request.get_json()
+    if not data:
+        return "No data received", 400
+
+    subject = data.get('subject')
+    to = data.get('to')
+    content = data.get('content')
+    mail_id = data.get('id')
+
+    if not all([subject, to, content, mail_id]):
+        return "Missing fields", 400
+
+    new_entry = TrackedMail(id=mail_id, user_email=to)
+    db.session.add(new_entry)
+    db.session.commit()
+
+    print(f"✅ Stored email: To={to}, Subject={subject}")
+    return 'Stored', 200
+
 @app.route('/create_mail')
 def create_mail():
     mail_id = request.args.get('id')

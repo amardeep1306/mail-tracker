@@ -46,6 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Open dashboard on button click
     document.getElementById("statusBtn").onclick = function () {
-        window.open("http://localhost:5000/dashboard", "_blank");
+        window.open("https://mail-tracker-production-7e26.up.railway.app/dashboard", "_blank");
     };
 });
