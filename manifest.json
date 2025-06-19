@@ -3,7 +3,12 @@
   "name": "Mail Tracker for Firefox",
   "version": "1.0",
   "description": "Check if your email is opened by the recipient.",
-  "permissions": ["activeTab", "storage"],
+  "permissions": [
+  "activeTab",
+  "storage",
+  "https://mail-tracker-production-7e26.up.railway.app/*"
+],
+
   "icons": {
     "48": "icon.png"
   },
@@ -14,9 +19,14 @@
   "content_scripts": [
     {
       "matches": ["https://mail.google.com/*"],
-      "js": ["content.js"]
+      "js": ["content.js"],
+      "run_at": "document_end"
     }
   ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
   "browser_specific_settings": {
     "gecko": {
       "id": "amardeepkumar13641364@gmail.com"
