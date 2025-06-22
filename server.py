@@ -43,14 +43,14 @@ def store_email():
     db.session.add(new_entry)
     db.session.commit()
 
-    print(f"✅ Stored email: To={to}, Subject={subject}")
+    print(f" Stored email: To={to}, Subject={subject}")
     return 'Stored', 200
 
 @app.route('/create_mail')
 def create_mail():
     mail_id = request.args.get('id')
     user_email = request.args.get('email')
-    print(f"🟡 Saving Mail: ID={mail_id}, Email={user_email}")
+    print(f" Saving Mail: ID={mail_id}, Email={user_email}")
     if not mail_id or not user_email:
         return "Missing data", 400
     new_entry = TrackedMail(id=mail_id, user_email=user_email)
