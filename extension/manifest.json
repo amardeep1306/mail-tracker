@@ -1,35 +1,53 @@
 {
   "manifest_version": 2,
   "name": "Mail Tracker for Firefox",
-  "version": "1.0",
-  "description": "Check if your email is opened by the recipient.",
-  "permissions": [
-  "activeTab",
-  "storage",
-  "https://mail-tracker-production-7e26.up.railway.app/*"
-],
+  "version": "1.1.0",
+  "description": "Track when your emails are opened by recipients with read receipts and detailed analytics.",
 
   "icons": {
-    "48": "icon.png"
+    "48": "icons/icon.png",
+    "96": "icons/icon.png"
   },
+
   "browser_action": {
-    "default_popup": "popup.html",
-    "default_icon": "icon.png"
+    "default_icon": "icons/icon.png",
+    "default_title": "Mail Tracker",
+    "default_popup": "popup/popup.html"
   },
+
+  "permissions": [
+    "storage",
+    "tabs",
+    "webRequest",
+    "webRequestBlocking",
+    "*://mail.google.com/*",
+    "http://localhost:5000/*",
+    "http://127.0.0.1:5000/*"
+  ],
+
   "content_scripts": [
     {
-      "matches": ["https://mail.google.com/*"],
+      "matches": ["*://mail.google.com/*"],
       "js": ["content.js"],
-      "run_at": "document_end"
+      "run_at": "document_idle"
     }
   ],
+
   "background": {
     "scripts": ["background.js"],
-    "persistent": false
+    "persistent": true
   },
+
   "browser_specific_settings": {
     "gecko": {
-      "id": "amardeepkumar13641364@gmail.com"
+      "id": "mail-tracker@example.com",
+      "strict_min_version": "78.0"
     }
-  }
+  },
+
+  "content_security_policy": "script-src 'self' https://cdnjs.cloudflare.com; object-src 'self'; connect-src http://localhost:5000 http://127.0.0.1:5000",
+  
+  "web_accessible_resources": [
+    "icons/*.png"
+  ]
 }
