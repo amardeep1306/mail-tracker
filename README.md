@@ -17,17 +17,17 @@ A web-based dashboard is also provided where users can see:
 
 - Summary statistics like open rates and average read time
 
-## Installation
-
 #  Firefox Email Tracker - Local Setup Guide
+
+## Installation
 
 This guide helps you run the **Firefox Email Tracker** project locally on any laptop. It includes backend (Flask server) + frontend (Firefox extension) setup.
 
 ---
 
-##  Minimum Requirements
+###  Minimum Requirements
 
-###  1. System Requirements
+####  1. System Requirements
 
 | Component | Requirement                        |
 |-----------|------------------------------------|
