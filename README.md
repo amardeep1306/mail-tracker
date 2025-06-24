@@ -77,9 +77,9 @@ pip install flask flask_sqlalchemy flask_cors pillow humanize
 2. In the address bar, go to:
 
 Go to the following URL in your Firefox browser to load the extension:
-
+```bash
 [about:debugging#/runtime/this-firefox](about:debugging#/runtime/this-firefox)
-
+```
 
 3. Click on **"Load Temporary Add-on..."**
 4. Select the `manifest.json` file from your extension directory.
