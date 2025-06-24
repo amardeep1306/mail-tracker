@@ -78,7 +78,7 @@ pip install flask flask_sqlalchemy flask_cors pillow humanize
 
 Go to the following URL in your Firefox browser to load the extension:
 ```bash
-[about:debugging#/runtime/this-firefox](about:debugging#/runtime/this-firefox)
+about:debugging#/runtime/this-firefox
 ```
 
 3. Click on **"Load Temporary Add-on..."**
